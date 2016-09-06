@@ -1,13 +1,5 @@
 import math
 
-def genTriangular():
-    n = 1
-    m = 2
-    while True:
-        yield n
-        n += m
-        m += 1
-
 def getDivisors(n):
     divisors = []
     if n == 1:
@@ -24,11 +16,12 @@ def getDivisors(n):
             divisors.append(n//i)
     return divisors
 
-
 divisors = []
-genny = genTriangular()
-tri = 0
-while len(divisors) <= 500:
-    tri = next(genny)
-    divisors = getDivisors(tri)
-print(tri)
+n = 1
+maxDivs = 500
+while len(getDivisors((n + 1) / 2)) * len(getDivisors(n)) <= maxDivs:
+    n += 1
+    if len(getDivisors(n / 2)) * len(getDivisors(n + 1)) > maxDivs:
+        break
+
+print(n * (n + 1) / 2)
