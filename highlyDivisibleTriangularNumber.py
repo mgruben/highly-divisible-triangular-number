@@ -16,12 +16,15 @@ def getDivisors(n):
             divisors.append(n//i)
     return divisors
 
+def countDivisors(n):
+    return len(getDivisors(n))
+
 divisors = []
 n = 1
 maxDivs = 500
-while len(getDivisors((n + 1) / 2)) * len(getDivisors(n)) <= maxDivs:
+while countDivisors((n + 1) / 2) * countDivisors(n) <= maxDivs:
     n += 1
-    if len(getDivisors(n / 2)) * len(getDivisors(n + 1)) > maxDivs:
+    if countDivisors(n / 2) * countDivisors(n + 1) > maxDivs:
         break
 
 print(n * (n + 1) / 2)
