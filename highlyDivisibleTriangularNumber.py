@@ -1,3 +1,5 @@
+import math
+
 def genTriangular():
     n = 1
     m = 2
@@ -13,13 +15,17 @@ def getDivisors(n):
     else:
         divisors.append(1)
         divisors.append(n)
-    for i in range(2, (n // 2) + 1):
+    for i in range(2, (math.floor(math.sqrt(n))) + 1):
         if n % i == 0:
             divisors.append(i)
+            divisors.append(n//i)
     return sorted(divisors)
 
 
 divisors = []
 genny = genTriangular()
+tri = 0
 while len(divisors) <= 500:
-    divisors = getDivisors(next(genny))
+    tri = next(genny)
+    divisors = getDivisors(tri)
+print(tri)
