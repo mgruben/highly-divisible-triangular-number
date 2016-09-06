@@ -15,7 +15,10 @@ def getDivisors(n):
     else:
         divisors.append(1)
         divisors.append(n)
-    for i in range(2, (math.floor(math.sqrt(n))) + 1):
+    sq = math.ceil(math.sqrt(n))
+    if n // sq == sq:
+        divisors.append(sq)
+    for i in range(2, math.floor(math.sqrt(n))):
         if n % i == 0:
             divisors.append(i)
             divisors.append(n//i)
