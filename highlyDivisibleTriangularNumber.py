@@ -27,4 +27,4 @@ while countDivisors((n + 1) / 2) * countDivisors(n) <= maxDivs:
     if countDivisors(n / 2) * countDivisors(n + 1) > maxDivs:
         break
 
-print(n * (n + 1) / 2)
+print(n * (n + 1) // 2)
