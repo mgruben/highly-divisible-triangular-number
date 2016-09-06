@@ -22,7 +22,7 @@ def getDivisors(n):
         if n % i == 0:
             divisors.append(i)
             divisors.append(n//i)
-    return sorted(divisors)
+    return divisors
 
 
 divisors = []
