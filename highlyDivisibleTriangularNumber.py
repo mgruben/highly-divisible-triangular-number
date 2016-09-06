@@ -16,8 +16,6 @@ def getDivisors(n):
             divisors.append(n//i)
     return divisors
 
-
-
 divisors = []
 n = 1
 maxDivs = 500
