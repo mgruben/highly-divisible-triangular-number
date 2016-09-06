@@ -17,3 +17,9 @@ def getDivisors(n):
         if n % i == 0:
             divisors.append(i)
     return sorted(divisors)
+
+
+divisors = []
+genny = genTriangular()
+while len(divisors) <= 500:
+    divisors = getDivisors(next(genny))
