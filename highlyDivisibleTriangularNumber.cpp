@@ -8,7 +8,7 @@ int countDivisors(int n) {
     for (int i = 1; i * i <= n; i++) {
         if (n % i == 0) {
             c+= 2; // i and n / i are factors
-            if (n / i == i) c--;
+            if (n / i == i) c--; // removes duplicates for n = 1, n = i * i
         }
     }
     return c;
