@@ -19,7 +19,7 @@ int main() {
     int maxDivs = 500;
     int divs = 0;
     int n;
-    for (n = 2; divs < maxDivs; n++) {
+    for (n = 2; divs <= maxDivs; n++) {
         if (n % 2 == 0) divs = countDivisors(n / 2) * countDivisors(n + 1);
         else divs = countDivisors(n) * countDivisors((n + 1) / 2);
     }
