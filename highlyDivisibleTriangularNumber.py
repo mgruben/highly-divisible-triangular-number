@@ -22,9 +22,14 @@ def countDivisors(n):
 divisors = []
 n = 1
 maxDivs = 500
-while countDivisors((n + 1) / 2) * countDivisors(n) <= maxDivs:
+divs = 0
+while divs <= maxDivs:
     n += 1
-    if countDivisors(n / 2) * countDivisors(n + 1) > maxDivs:
-        break
+    if n % 2 == 0:
+        divs = countDivisors(n / 2) * countDivisors(n + 1)
+    else:
+        divs = countDivisors((n + 1) / 2) * countDivisors(n)
 
-print(n * (n + 1) // 2)
+print("The first triangular number with more than " + str(maxDivs) \
+    + " divisors is " + str(n * (n + 1) // 2) + " (" + str(divs) \
+    + " divisors)")
