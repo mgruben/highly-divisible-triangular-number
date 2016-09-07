@@ -1,4 +1,5 @@
 public class highlyDivisibleTriangularNumber {
+    private int divs;
     private int countDivisors(int n) {
         int c = 0;
         for (int i = 1; i * i <= n; i++) {
@@ -11,7 +12,7 @@ public class highlyDivisibleTriangularNumber {
     }
     
     public int findTriangularNumber(int maxDivs) {
-        int divs = 0;
+        divs = 0;
         int n = 0;
         while (divs <= maxDivs) {
             n++;
@@ -21,8 +22,14 @@ public class highlyDivisibleTriangularNumber {
         return n * (n + 1) / 2;
     }
     
+    public int getDivs() { return this.divs; }
+    
     public static void main(String[] args) {
         highlyDivisibleTriangularNumber h = new highlyDivisibleTriangularNumber();
-        System.out.println(h.findTriangularNumber(500));
+        int maxDivs = 500;
+        String s = String.format("The first triangular number with more than "
+        +"%d integer factors is %d (%d factors)", maxDivs,
+        h.findTriangularNumber(500), h.getDivs());
+        System.out.println(s);
     };
 }
