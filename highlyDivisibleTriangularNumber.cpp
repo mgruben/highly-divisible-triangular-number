@@ -18,11 +18,13 @@ int main() {
     int maxDivs = 500;
     int divs = 0;
     int n;
-    for (n = 10; divs <= maxDivs; n++) {
+    for (n = 1; divs <= maxDivs; n++) {
         if (n % 2 == 0) divs = countDivisors(n / 2) * countDivisors(n + 1);
         else divs = countDivisors(n) * countDivisors((n + 1) / 2);
-        cout << n << " " << divs << endl;
     }
-    cout << (n * (n + 1) / 2) << endl;
+    n--; // we overshoot by one in the above for loop
+    cout << "The first triangular number with more than " <<
+    maxDivs << " divisors is " << (n * (n + 1) / 2) << " (" << divs << 
+    " divisors)" << endl;
     return 0;
 }
