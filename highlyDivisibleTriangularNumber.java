@@ -28,7 +28,7 @@ public class highlyDivisibleTriangularNumber {
         highlyDivisibleTriangularNumber h = new highlyDivisibleTriangularNumber();
         int maxDivs = 500;
         String s = String.format("The first triangular number with more than "
-        +"%d integer factors is %d (%d factors)", maxDivs,
+        +"%d divisors is %d (%d factors)", maxDivs,
         h.findTriangularNumber(500), h.getDivs());
         System.out.println(s);
     };
